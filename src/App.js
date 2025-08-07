@@ -10,7 +10,7 @@ function App() {
     audio.addEventListener('loadeddata', () => {
       setTimeout(() => {
         audio.pause();
-      }, 1000);
+      }, 3000);
     });
     
     audio.play().catch(error => {
@@ -26,9 +26,9 @@ function App() {
           className="tap-button"
           onClick={playSound}
           onTouchStart={playSound}
-          style={{ fontSize: '96px' }}
+          style={{ fontSize: '96px', overflow: "hidden" }}
         >
-          🦎
+          <img src="liztom1.png" alt="🦎" style={{ width: '100%', transform: "translate(-3%, 20%)" }} />
         </button>
         {/* <p>Click or tap the button to play sounds!</p>
         <p>You can spam it - sounds won't cut each other off!</p> */}
