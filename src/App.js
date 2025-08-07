@@ -10,7 +10,7 @@ function App() {
     audio.addEventListener('loadeddata', () => {
       setTimeout(() => {
         audio.pause();
-      }, 3000);
+      }, 3300);
     });
     
     audio.play().catch(error => {
