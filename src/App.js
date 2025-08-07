@@ -1,0 +1,40 @@
+import './App.css';
+
+function App() {
+  const playSound = () => {
+    // Create a new Audio instance each time to allow overlapping sounds
+    const audio = new Audio('/lizard.ogg');
+    audio.currentTime = 0;
+    
+    // Stop the audio after 1 second
+    audio.addEventListener('loadeddata', () => {
+      setTimeout(() => {
+        audio.pause();
+      }, 1000);
+    });
+    
+    audio.play().catch(error => {
+      console.error('Error playing sound:', error);
+    });
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        {/* <h1>Sound Tapper</h1> */}
+        <button 
+          className="tap-button"
+          onClick={playSound}
+          onTouchStart={playSound}
+          style={{ fontSize: '96px' }}
+        >
+          🦎
+        </button>
+        {/* <p>Click or tap the button to play sounds!</p>
+        <p>You can spam it - sounds won't cut each other off!</p> */}
+      </header>
+    </div>
+  );
+}
+
+export default App;
