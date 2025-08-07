@@ -10,7 +10,9 @@ function App() {
     audio.addEventListener('loadeddata', () => {
       setTimeout(() => {
         audio.pause();
-      }, 3300);
+        audio = null;
+        delete audio;
+      }, 800);
     });
     
     audio.play().catch(error => {
@@ -25,7 +27,6 @@ function App() {
         <button 
           className="tap-button"
           onClick={playSound}
-          onTouchStart={playSound}
           style={{ fontSize: '96px', overflow: "hidden" }}
         >
           <img src="liztom1.png" alt="🦎" style={{ width: '100%', transform: "translate(-3%, 20%)" }} />
