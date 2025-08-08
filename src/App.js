@@ -10,8 +10,6 @@ function App() {
     audio.addEventListener('loadeddata', () => {
       setTimeout(() => {
         audio.pause();
-        audio = null;
-        delete audio;
       }, 800);
     });
     
